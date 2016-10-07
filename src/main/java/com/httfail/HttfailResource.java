@@ -9,7 +9,7 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
-@Path("/{http-status}")
+@Path("/")
 @Produces(MediaType.TEXT_PLAIN)
 public class HttfailResource {
     private final Integer defaultStatus;
@@ -21,10 +21,14 @@ public class HttfailResource {
     }
 
     @GET
+    public Response sayHello() {
+        return Response.status(defaultStatus).entity(defaultReason).build();
+    }
+
+    @GET
     @Timed
+    @Path("/{http-status}")
     public Response sayHello(@PathParam("http-status") Integer httpStatus) {
         return Response.status(httpStatus).entity(defaultReason).build();
     }
-
-
 }
