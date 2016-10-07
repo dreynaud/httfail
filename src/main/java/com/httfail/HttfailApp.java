@@ -26,6 +26,6 @@ public class HttfailApp extends Application<HttfailConfiguration> {
                 configuration.getDefaultReason()
         );
         environment.jersey().register(resource);
-        environment.healthChecks().register("template", new HttfailHealthcheck());
+        environment.healthChecks().register("httpfail-happy", new HttfailHealthcheck());
     }
 }
