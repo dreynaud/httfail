@@ -8,4 +8,4 @@ echoes whatever http status you're asking for
 
 ## Run
 
-    $ java -jar target/httfail-0.0.1-SNAPSHOT.jar server
+    $ java -jar target/httfail-0.0.1-SNAPSHOT.jar server config.yml

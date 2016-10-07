@@ -22,7 +22,8 @@ public class HttfailApp extends Application<HttfailConfiguration> {
     @Override
     public void run(HttfailConfiguration configuration, Environment environment) {
         final HttfailResource resource = new HttfailResource(
-//                configuration.getDefaultStatus(),
+                configuration.getDefaultStatus(),
+                configuration.getDefaultReason()
         );
         environment.jersey().register(resource);
     }
